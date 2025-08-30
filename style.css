@@ -1,0 +1,123 @@
+:root { 
+  --brand:#0d6efd; 
+  --dark:#0b172a; 
+  --nav-h:72px;          /* altezza navbar su mobile */
+}
+
+@media (min-width: 992px){
+  :root { --nav-h:80px; } /* altezza navbar su desktop */
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto;
+}
+
+/* Navbar */
+.brand-sub { font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; }
+
+/* HERO fisso */
+.hero { padding:0; margin:0; }
+.hero-fixed {
+  position: relative;
+  height: 40vh;
+  min-height: 200px;
+  overflow: hidden;
+}
+.hero-fixed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Intro */
+.intro h1 { color: var(--dark); }
+.intro p.lead { color: #374151; }
+
+/* Versetto in evidenza */
+.verse{
+  max-width: 960px;
+  background:#0b172a;
+  color:#fff;
+  border-radius:1rem;
+}
+
+/* Sezioni */
+.section { padding: 2.5rem 0; }
+.section--alt { background:#f7f9fc; }
+.container-narrow { max-width: 820px; margin: 0 auto; }
+.container-medium { max-width: 980px; margin: 0 auto; }
+
+/* Card / Box */
+.card-soft{
+  border:1px solid #eef1f6;
+  border-radius:1rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  background:#fff;
+}
+.church-box{ /* legacy class support */
+  border:1px solid #eef1f6;border-radius:1rem;padding:1.25rem;height:100%;
+  box-shadow:0 4px 16px rgba(0,0,0,.04); background:#fff;
+}
+.church-box .shortcut,
+.shortcut{
+  display:flex; align-items:center; gap:.5rem; padding:.6rem 0;
+  color:inherit; text-decoration:none; border-top:1px dashed #e7ecf4; margin-top:.5rem;
+}
+.shortcut i{ font-size:1.2rem; }
+.shortcut .bi-arrow-right-short{ margin-left:auto; }
+
+/* Titoli sezione */
+.section-title{ font-weight:800; text-align:center; margin-bottom:.25rem; }
+.section-sub{ text-align:center; color:#6b7280; margin-bottom:1.25rem; font-size:.95rem; }
+
+/* Liste pulite */
+.list-plain{ list-style:none; padding:0; margin:0; }
+.list-plain li{ padding:.4rem .25rem; }
+
+/* Mappa */
+.map-embed{ border-radius:1rem; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,.08); }
+
+/* Bottoni e dettagli */
+.btn-brand{ background:var(--brand); border:0; }
+.btn-brand:hover{ filter:brightness(.95); }
+.btn-outline-primary{ border-width:2px; }
+
+footer{ background:#06121f; color:#cbd5e1; }
+footer a{ color:#cbd5e1; }
+.smallcaps{ font-variant:all-small-caps; letter-spacing:.06em }
+
+/* Responsive */
+@media (max-width: 576px){
+  .section{ padding:2rem 0; }
+  .container-medium, .container-narrow{ padding-left:.75rem; padding-right:.75rem; }
+  .hero-fixed { height:22vh; min-height:160px; }
+}
+
+/* Correzione scroll con navbar sticky */
+section[id] { scroll-margin-top: var(--nav-h); }
+
+
+/* Migliora allineamento e spaziatura box indirizzo */
+#dovesiamo .card-soft ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: .9rem; /* più spazio verticale */
+}
+
+#dovesiamo .card-soft ul li:last-child {
+  margin-bottom: 0; /* evita spazio extra dopo l'ultimo */
+}
+
+#dovesiamo .card-soft ul li i {
+  flex-shrink: 0;
+  margin-right: .6rem;
+  font-size: 1.1rem;
+  color: var(--brand);
+}
+
+#dovesiamo .card-soft ul li strong {
+  margin-right: .25rem;
+}
+
