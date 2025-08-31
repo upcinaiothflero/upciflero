@@ -121,3 +121,6 @@ section[id] { scroll-margin-top: var(--nav-h); }
   margin-right: .25rem;
 }
 
+#donazioni {
+  display: none;
+}
